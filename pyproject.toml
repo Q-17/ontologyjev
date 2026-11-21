@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ontology-jev"
+version = "0.1.0"
+description = "Preview how policy changes affect agent decisions, with explicit relationships and semantic observations."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [{name = "OntologyJev contributors"}]
+dependencies = []
+keywords = ["agents", "ontology", "jev", "policy", "decision", "explainability"]
+
+[project.scripts]
+ontology-jev = "ontology_jev.__main__:main"
+
+[tool.setuptools]
+packages = ["ontology_jev"]
+include-package-data = false
+
+[tool.setuptools.package-data]
+ontology_jev = ["static/*.html", "static/*.css", "static/*.js"]

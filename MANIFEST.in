@@ -1,0 +1,15 @@
+include LICENSE README.md README.zh-CN.md CHANGELOG.md CONTRIBUTING.md
+include pyproject.toml .gitignore
+recursive-include ontology_jev *.py *.html *.css *.js
+recursive-include examples *.py
+recursive-include tests *.py *.js
+recursive-include scripts *.py
+include docs/architecture.md docs/release.md
+recursive-include docs/images *.png
+recursive-include .github *.yml *.yaml
+global-exclude __pycache__ *.py[cod] .env .env.*
+prune .ontologyjev
+prune .venv
+prune build
+prune dist
+prune docs/superpowers
