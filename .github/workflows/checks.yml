@@ -5,8 +5,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
-        python: ["3.8", "3.12"]
+        include:
+          # setup-python publishes Python 3.8 builds for Ubuntu 24.04.
+          - os: ubuntu-24.04
+            python: "3.8"
+          - os: ubuntu-latest
+            python: "3.12"
+          - os: windows-latest
+            python: "3.8"
+          - os: windows-latest
+            python: "3.12"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
